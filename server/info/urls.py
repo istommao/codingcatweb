@@ -1,5 +1,4 @@
 """info urls module."""
-
 from extensions.utils import generate_urlpatterns
 
 from info import views

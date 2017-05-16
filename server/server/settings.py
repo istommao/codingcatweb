@@ -126,7 +126,11 @@ TIME_FORMAT = 'H:i:s'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'server/static'),
+)
 
 try:
     # pylint: disable=W0614, C0413, wildcard-import
