@@ -4,9 +4,24 @@
 
 <div class="container">
   <div class="row">
-    <h2>{{ article.title }}</h2>
-    <h4>{{ article.intro }}</h4>
-    <h5>{{ article.creation_time }}</h5>
+    <main class="col-md-8 main-content">
+      <article class="post"><header class="post-head">
+        <h1 class="post-title">{{ article.title }}</h1>
+        <section class="post-meta"><span class="author">作者：<a href="#">codingcat</a></span> • 
+        <time class="post-date" datetime="2017年02月20日" title="2017年02月20日">2017年02月20日</time></section></header>
+        <section class="featured-media"><img src="https://i1.kknews.cc/large/6d000087d46d20d31db" alt="">
+        {{ article.intro }}
+        </section>
+    </main>
+
+    <aside class="col-md-4 sidebar">
+      <div class="widget">
+        <h4 class="title">分类</h4>
+        <p><a href="javascript:void(0);" title=""><i class="fa fa-comments"></i>技术资讯</a></p>
+        </div>
+      </div>
+    </aside>
+
   </div>
 </div>
 
