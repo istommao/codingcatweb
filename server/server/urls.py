@@ -22,6 +22,7 @@ from server import views
 # pylint: disable=C0103
 urlpatterns = [
     url(r'^$', views.IndexView.as_view()),
+    url(r'^about/$', views.AboutView.as_view()),
     url(r'^admin/', admin.site.urls),
     url(r'^info/', include('info.urls', namespace='info')),
 ]
