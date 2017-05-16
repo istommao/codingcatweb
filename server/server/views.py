@@ -1,6 +1,8 @@
 """server views."""
 from django.views import generic
 
+from info.services import get_article_queryset
+
 
 class IndexView(generic.TemplateView):
     """Index view."""
@@ -11,6 +13,11 @@ class IndexView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        dataset = {
+            'articles': get_article_queryset()
+        }
+        context.update(dataset)
         return context
 
 
