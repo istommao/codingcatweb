@@ -27,7 +27,7 @@ class Resource(models.Model):
 
     uid = RandomFixedCharField('编号', max_length=16, unique=True)
     title = models.CharField('标题', max_length=32)
-    intro = models.CharField('简介', max_length=64)
+    intro = models.CharField('简介', max_length=100)
     link = models.URLField('链接', max_length=200, default='')
 
     category = models.ForeignKey('collector.ResourceType', verbose_name='类型',
