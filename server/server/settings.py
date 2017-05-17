@@ -133,6 +133,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'server/static'),
 )
 
+# Media config
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 try:
     # pylint: disable=W0614, C0413, wildcard-import
     from server.local_settings import *   # noqa

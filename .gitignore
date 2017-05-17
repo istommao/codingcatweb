@@ -103,4 +103,13 @@ ENV/
 # mypy
 .mypy_cache/
 
+# folders
+server/media/*/*
+
 server/static
+
+!.gitignore
+!.gitkeep
+!default.png
+!default.jpg
+!default.jpeg

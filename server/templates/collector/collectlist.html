@@ -17,10 +17,10 @@
     {% for item in resources %}
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="{% static 'demo.jpeg' %}" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+        <img src="{{ item.image.url }}" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
         <div class="caption">
           <h4>{{ item.title }}</h4>
-          <p>{{ item.intro }}</p>
+          <p>{{ item.intro|truncatechars:85 }}</p>
           <p><a href="{{ item.link }}" class="btn btn-primary" target="_blank" role="button">查看详情</a></p>
         </div>
       </div>

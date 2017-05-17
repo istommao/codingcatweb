@@ -1,7 +1,9 @@
 """collector models."""
 from django.db import models
 
-from extensions.modelutils import RandomFixedCharField
+from extensions.modelutils import RandomFixedCharField, PathAndRename
+
+from collector import consts
 
 
 class ResourceType(models.Model):
@@ -29,6 +31,11 @@ class Resource(models.Model):
     title = models.CharField('标题', max_length=32)
     intro = models.CharField('简介', max_length=100)
     link = models.URLField('链接', max_length=200, default='')
+
+    image = models.ImageField(
+        '图片', upload_to=PathAndRename('collector/'),
+        default=consts.DEFAULT_IMAGE
+    )
 
     category = models.ForeignKey('collector.ResourceType', verbose_name='类型',
                                  related_name='resources')
