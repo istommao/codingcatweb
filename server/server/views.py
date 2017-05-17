@@ -4,6 +4,17 @@ from django.views import generic
 from info.services import get_article_queryset
 
 
+class SilentNoteView(generic.TemplateView):
+    """Silent note view."""
+
+    view_name = 'note'
+    template_name = 'note.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
 class IndexView(generic.TemplateView):
     """Index view."""
 
