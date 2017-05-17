@@ -14,12 +14,12 @@
 
   <div class="row post">
     {% for item in resources %}
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <img src="{{ item.image.url }}" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+        <img src="{{ item.image.url }}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
         <div class="caption">
           <h4>{{ item.title }}</h4>
-          <p>{{ item.intro|truncatechars:90 }}</p>
+          <p>{{ item.intro|truncatechars:16 }}</p>
           <p class="pull-right"><a href="{{ item.link }}" class="btn btn-primary" target="_blank" role="button">查看详情</a></p>
         </div>
       </div>

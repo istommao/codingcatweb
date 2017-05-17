@@ -8,11 +8,11 @@
     {% for article in articles %}
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <img src="{% static 'demo.jpeg' %}" data-holder-rendered="true" style="height: auto; width: 100%; display: block;">
+        <img src="{% static 'default.png' %}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
         <div class="caption">
-          <h4>{{ article.title }}</h4>
-          <p>{{ article.intro }}</p>
-          <p><a href="{% url 'info:article_detail' article.uid %}" class="btn btn-primary" role="button">查看详情</a></p>
+          <h4>{{ article.title|truncatechars:14 }}</h4>
+          <p>{{ article.intro|truncatechars:15 }}</p>
+          <p class="pull-right"><a href="{% url 'info:article_detail' article.uid %}" class="btn btn-primary" role="button">查看详情</a></p>
         </div>
       </div>
     </div>

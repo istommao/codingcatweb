@@ -84,10 +84,10 @@ body, html {
 }
 
 #content {
-    margin: 15px 0;
+    margin: 30px 0 15px 0;
 }
 #content .post .thumbnail {
-    height: 400px;
+    height: 300px;
 }
 
 .copyright {
