@@ -84,8 +84,20 @@ body, html {
 }
 
 #content {
-    margin: 15px 0 ;
+    margin: 15px 0;
 }
 #content .post .thumbnail {
     height: 400px;
 }
+
+.copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+    height: 80px;
+}
+.fixed-bottom {position: fixed;bottom: 0;width:100%;}

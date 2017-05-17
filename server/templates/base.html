@@ -48,10 +48,34 @@
     {% block banner %}{% endblock banner %}
     <div id="content">{% block content %}{% endblock content %}</div>
 
+    <div class="copyright">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <span>Copyright © <a href="/">codingcat</a></span>
+              </div>
+          </div>
+      </div>
+    </div>
     {% block mainscript %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+    $(function(){
+        function footerPosition(){
+            $(".copyright").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,
+                winHeight = window.innerHeight;
+            if(!(contentHeight > winHeight)){
+                $(".copyright").addClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+    </script>
     {% endblock mainscript %}
+    
 
 {% endblock body %}
 </body>
