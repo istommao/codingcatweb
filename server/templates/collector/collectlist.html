@@ -13,7 +13,6 @@
   </div>
 
   <div class="row post">
-
     {% for item in resources %}
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
@@ -21,8 +20,10 @@
         <div class="caption">
           <h4>{{ item.title }}</h4>
           <p>{{ item.intro|truncatechars:85 }}</p>
-          <p><a href="{{ item.link }}" class="btn btn-primary" target="_blank" role="button">查看详情</a></p>
         </div>
+        <footer class="post-footer clearfix">
+          <p class="pull-right"><a href="{{ item.link }}" class="btn btn-primary" target="_blank" role="button">查看详情</a></p>
+        </footer>
       </div>
     </div>
     {% endfor %}

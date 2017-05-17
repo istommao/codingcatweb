@@ -75,10 +75,17 @@ body, html {
     position: relative;
 }
 
+#top {
+    margin: 0 auto;
+}
+
 #top .activeLink a {
     color: white;
 }
 
+#content {
+    margin: 15px 0 ;
+}
 #content .post .thumbnail {
     height: 400px;
 }
