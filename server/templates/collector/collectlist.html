@@ -5,11 +5,11 @@
 
 <div class="container">
   <div class="row post">
-    <div class="col-xs-12 hidden-xs hidden-sm">
       {% for category in categories %}
-      <a href="{{ request.path }}?category={{ category.uid }}" class="btn btn-default">{{ category.name }}</a>
+      <div class="col-xs-4 col-md-2 col-lg-1 col-sm-2">
+        <a href="{{ request.path }}?category={{ category.uid }}" class="btn btn-default">{{ category.name }}</a>
+      </div>
       {% endfor %}
-    </div>
   </div>
 
   <div class="row post">
