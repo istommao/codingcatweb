@@ -1,14 +1,14 @@
 {% extends "base.html" %}
+{% load admin_static %}
 
 {% block content %}
 
 <div class="container">
-  <div class="row">
-
+  <div class="row post">
     {% for article in articles %}
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <img src="https://i1.kknews.cc/large/6d000087d46d20d31db" data-holder-rendered="true" style="height: auto; width: 100%; display: block;">
+        <img src="{% static 'demo.jpeg' %}" data-holder-rendered="true" style="height: auto; width: 100%; display: block;">
         <div class="caption">
           <h4>{{ article.title }}</h4>
           <p>{{ article.intro }}</p>

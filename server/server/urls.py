@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^about/$', views.AboutView.as_view()),
     url(r'^admin/', admin.site.urls),
     url(r'^info/', include('info.urls', namespace='info')),
+    url(r'^collector/', include('collector.urls', namespace='collector')),
 ]
 
 
