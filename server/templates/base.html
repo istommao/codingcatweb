@@ -1,4 +1,4 @@
-{% load admin_static %}
+{% load admin_static extags %}
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
@@ -23,17 +23,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="/" class="navbar-brand">Codingcat</a>
+          <a href="/" class="navbar-brand {% activelink request.path '/' %}">Codingcat</a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li>
+            <li class="{% activelink request.path '/info/article/' %}">
               <a href="{% url 'info:article_list' %}">资讯</a>
             </li>
             <li>
               <a href="https://silentnotes.top/" target="_blank">无声笔记</a>
             </li>
-            <li>
+            <li class="{% activelink request.path '/about' %}">
               <a href="/about">关于</a>
             </li>
           </ul>
