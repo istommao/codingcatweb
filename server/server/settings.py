@@ -161,6 +161,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': CKEDITOR_TOOLBAR_CUSTOM,
         'height': 300,
         'image_previewText': ' ',
+        'extraPlugins': 'uploadimage',
         'extraAllowedContent': 'iframe[*]',
         'removeDialogTabs': ('image:Link;image:advanced;link:target;'
                              'link:upload;link:advanced'),
