@@ -148,10 +148,10 @@ CKEDITOR_TOOLBAR_CUSTOM = [
     ['Bold', 'Italic', 'Underline', 'Strike'],
     ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote'],
     ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-    ['Link', 'Image', 'Youku', 'Table', 'HorizontalRule'],
+    ['Link', 'Image', 'Table', 'HorizontalRule'],
     ['Styles', 'Format', 'Font', 'LineHeight', 'FontSize'],
-    ['TextColor', 'BGColor'],
-    ['Maximize', 'ShowBlocks']
+    ['TextColor', 'BGColor', 'CodeSnippet'],
+    ['Maximize']
 ]
 
 CKEDITOR_CONFIGS = {
@@ -161,7 +161,8 @@ CKEDITOR_CONFIGS = {
         'toolbar': CKEDITOR_TOOLBAR_CUSTOM,
         'height': 300,
         'image_previewText': ' ',
-        'extraPlugins': 'uploadimage',
+        'extraPlugins': 'uploadimage,codesnippet',
+        'codeSnippet_theme': 'monokai_sublime',
         'extraAllowedContent': 'iframe[*]',
         'removeDialogTabs': ('image:Link;image:advanced;link:target;'
                              'link:upload;link:advanced'),
