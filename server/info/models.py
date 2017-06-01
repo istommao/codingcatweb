@@ -3,13 +3,19 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
-from extensions.modelutils import RandomFixedCharField
+from extensions.modelutils import RandomFixedCharField, PathAndRename
+
+from info import consts
 
 
 class Article(models.Model):
     """Article Model."""
 
     uid = RandomFixedCharField('编号', max_length=16, unique=True)
+    image = models.ImageField(
+        '图片', upload_to=PathAndRename('info/'),
+        default=consts.DEFAULT_IMAGE
+    )
 
     title = models.CharField('标题', max_length=32)
     intro = models.CharField('简介', max_length=128, default='')
