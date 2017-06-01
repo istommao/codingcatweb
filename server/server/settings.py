@@ -167,6 +167,46 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+LOG_DIR = os.path.join(BASE_DIR, 'logs/')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(levelname)s %(name)s %(asctime)s %(pathname)s \
+                       %(module)s %(lineno)d %(message)s'),
+            'datefmt': '[%Y-%m-%d %H:%M:%S]'
+        },
+        'django_request': {
+            'format': '%(levelname)s %(asctime)s line:%(lineno)d %(message)s',
+            'datefmt': '[%Y-%m-%d %H:%M:%S]'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'request_log_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'request.log'),
+            'backupCount': 5,
+            'maxBytes': 16777216,   # 16megabytes(16M)
+            'formatter': 'django_request'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['request_log_file'],
+            'propagate': True,
+            'level': 'INFO',
+        }
+    }
+}
+
 try:
     # pylint: disable=W0614, C0413, wildcard-import
     from server.local_settings import *   # noqa
