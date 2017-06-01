@@ -1,6 +1,8 @@
 """info models."""
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 from extensions.modelutils import RandomFixedCharField
 
 
@@ -11,6 +13,7 @@ class Article(models.Model):
 
     title = models.CharField('标题', max_length=32)
     intro = models.CharField('简介', max_length=128, default='')
+    content = RichTextField(verbose_name='内容', default='')
 
     creation_time = models.DateTimeField('创建时间', auto_now_add=True)
 

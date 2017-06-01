@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^about/$', views.AboutView.as_view()),
     url(r'^note/$', views.SilentNoteView.as_view()),
     url(r'^admin/', admin.site.urls),
+    url(r'^admin/ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^info/', include('info.urls', namespace='info')),
     url(r'^collector/', include('collector.urls', namespace='collector')),
 ]

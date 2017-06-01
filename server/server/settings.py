@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ckeditor',
+    'ckeditor_uploader',
+
     'extensions',
     'info',
     'collector'
@@ -136,6 +139,33 @@ STATICFILES_DIRS = (
 # Media config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = 'upload/'
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_TOOLBAR_CUSTOM = [
+    ['Undo', 'Redo', '-', 'SelectAll', 'RemoveFormat'],
+    ['Bold', 'Italic', 'Underline', 'Strike'],
+    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote'],
+    ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+    ['Link', 'Image', 'Youku', 'Table', 'HorizontalRule'],
+    ['Styles', 'Format', 'Font', 'LineHeight', 'FontSize'],
+    ['TextColor', 'BGColor'],
+    ['Maximize', 'ShowBlocks']
+]
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        'language': 'zh-cn',
+        'uiColor': '#E7E7E7',
+        'toolbar': CKEDITOR_TOOLBAR_CUSTOM,
+        'height': 300,
+        'image_previewText': ' ',
+        'extraAllowedContent': 'iframe[*]',
+        'removeDialogTabs': ('image:Link;image:advanced;link:target;'
+                             'link:upload;link:advanced'),
+    }
+}
 
 try:
     # pylint: disable=W0614, C0413, wildcard-import
