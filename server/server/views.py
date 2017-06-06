@@ -1,7 +1,7 @@
 """server views."""
 from django.views import generic
 
-from info.services import get_article_queryset
+from info.services import get_article_queryset, get_news_queryset
 
 
 class SilentNoteView(generic.TemplateView):
@@ -26,7 +26,8 @@ class IndexView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
 
         dataset = {
-            'articles': get_article_queryset()
+            'articles': get_article_queryset()[:5],
+            'news': get_news_queryset()[:5]
         }
         context.update(dataset)
         return context

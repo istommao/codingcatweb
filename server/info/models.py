@@ -30,3 +30,27 @@ class Article(models.Model):
         """Article Meta."""
         verbose_name = '文章管理'
         verbose_name_plural = '文章管理'
+
+
+class News(models.Model):
+    """News model."""
+
+    uid = RandomFixedCharField('编号', max_length=16, unique=True)
+    image = models.ImageField(
+        '图片', upload_to=PathAndRename('news/'),
+        default=consts.DEFAULT_IMAGE
+    )
+
+    title = models.CharField('标题', max_length=32)
+    intro = models.CharField('简介', max_length=128, default='')
+    link = models.URLField('链接')
+
+    creation_time = models.DateTimeField('创建时间', auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        """Article Meta."""
+        verbose_name = '新闻管理'
+        verbose_name_plural = '新闻管理'
