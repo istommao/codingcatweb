@@ -30,9 +30,8 @@
       <div class="widget">
         <h4 class="title">IT资讯</h4>
         {% for item in news %}
-        <div class="content"><a href="{{ item.link }}" target="_blank">{{ item.title|truncatechars:22 }}</a>
+        <div class="content"><a href="{{ item.link }}" target="_blank">{{ item.title|truncatechars:22 }}</a></div>
         {% endfor %}
-        </div>
       </div>
 
       <div class="widget">
