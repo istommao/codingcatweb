@@ -17,9 +17,8 @@ class CollectListView(generic.TemplateView):
         categories = ResourceType.objects.all()
         resources = Resource.objects.all()
 
-
         category_uid = self.request.GET.get('category')
-        print(category_uid)
+
         if category_uid:
             try:
                 category = ResourceType.objects.get(uid=category_uid)
@@ -27,6 +26,8 @@ class CollectListView(generic.TemplateView):
                 pass
             else:
                 resources = resources.filter(category=category)
+        else:
+            resources = resources[:8]
 
         dataset = {
             'categories': categories,
