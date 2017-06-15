@@ -10,13 +10,13 @@
 
 <div class="container">
   <div class="row">
-  
+
     <main class="col-md-8 main-content">
       <article class="post"><header class="post-head">
         <h1 class="post-title">{{ column.name }}</h1>
-        <section class="post-meta"><span class="author">作者：<a href="#">codingcat</a></span> • 
+        <section class="post-meta"><span class="author">作者：<a href="#">codingcat</a></span> •
         <time class="post-date" datetime="{{ column.creation_time }}" title="{{ column.name }}">{{ column.creation_time }}</time></section></header>
-        <div class="post-content"><p><img src="{{ column.image.url }}" data-holder-rendered="true"></p><p>{{ column.intro|safe }}</p>
+        <div class="post-content"><p><img src="{{ column.image.url }}" data-holder-rendered="true" style="width:100%;"></p><p>{{ column.intro|safe }}</p>
         </div></article>
       </article>
     </main>
