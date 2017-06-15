@@ -1,11 +1,33 @@
 """info models."""
 from django.db import models
 
-from ckeditor.fields import RichTextField
+from simditor.fields import RichTextField
 
 from extensions.modelutils import RandomFixedCharField, PathAndRename
 
 from info import consts
+
+
+class Column(models.Model):
+    """Column Model."""
+    uid = RandomFixedCharField('编号', max_length=8, unique=True)
+    image = models.ImageField(
+        '图片', upload_to=PathAndRename('info/'),
+        default=consts.DEFAULT_IMAGE
+    )
+
+    name = models.CharField('名称', max_length=32)
+    intro = models.CharField('简介', max_length=128, default='')
+
+    creation_time = models.DateTimeField('创建时间', auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        """Column Meta."""
+        verbose_name = '专栏管理'
+        verbose_name_plural = '专栏管理'
 
 
 class Article(models.Model):
@@ -22,6 +44,10 @@ class Article(models.Model):
     content = RichTextField(verbose_name='内容', default='')
 
     creation_time = models.DateTimeField('创建时间', auto_now_add=True)
+
+    column = models.ForeignKey('info.Column', verbose_name='专栏',
+                               related_name='articles',
+                               null=True, blank=True)
 
     def __str__(self):
         return self.title

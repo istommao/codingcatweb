@@ -2,20 +2,19 @@
 from django import forms
 from django.contrib import admin
 
-from info.models import Article, News
-
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from info.models import Article, News, Column
 
 
-class InfoAdminForm(forms.ModelForm):
-    content = forms.CharField(label='内容', widget=CKEditorUploadingWidget())
+@admin.register(Column)
+class ColumnAdmin(admin.ModelAdmin):
+    """ColumnAdmin"""
+
+    list_display = ('uid', 'name', 'creation_time')
 
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     """ArticleAdmin."""
-
-    form = InfoAdminForm
 
     list_display = ('uid', 'title', 'creation_time')
 

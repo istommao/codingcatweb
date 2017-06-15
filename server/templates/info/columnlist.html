@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load admin_static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row post">
+    {% for column in columns %}
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img src="{{ column.image.url }}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
+        <div class="caption">
+          <h4>{{ column.name|truncatechars:14 }}</h4>
+          <p>{{ column.intro|truncatechars:15 }}</p>
+          <p class="pull-right"><a href="{% url 'info:column_detail' column.uid %}" class="btn btn-primary" role="button">查看详情</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock content %}

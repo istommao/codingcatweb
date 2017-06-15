@@ -28,7 +28,10 @@
         <nav id="bs-navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="{% activelink request.path '/info/article/' %}">
-              <a href="{% url 'info:article_list' %}">资讯</a>
+              <a href="{% url 'info:article_list' %}">文章</a>
+            </li>
+            <li class="{% activelink request.path '/info/column/' %}">
+              <a href="{% url 'info:column_list' %}">专栏</a>
             </li>
             <li class="{% activelink request.path '/collector' %}">
               <a href="{% url 'collector:collect_list' %}">收藏家</a>
@@ -57,6 +60,7 @@
           </div>
       </div>
     </div>
+
     {% block mainscript %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

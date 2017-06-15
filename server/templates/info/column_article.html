@@ -10,6 +10,7 @@
 
 <div class="container">
   <div class="row">
+  
     <main class="col-md-8 main-content">
       <article class="post"><header class="post-head">
         <h1 class="post-title">{{ article.title }}</h1>
@@ -20,10 +21,12 @@
       </article>
     </main>
 
-    <aside class="col-md-4 sidebar">
+    <aside class="col-md-3 sidebar">
       <div class="widget">
-        <h4 class="title">分类</h4>
-        <p><a href="javascript:void(0);" title=""><i class="fa fa-comments"></i>技术资讯</a></p>
+        <h4 class="title"><a href="{% url 'info:column_detail' column.uid %}" title="">{{ column.name }}</a></h4>
+        {% for article in articles %}
+        <p><a href="{% url 'info:column_article' column.uid article.uid %}" title=""><i class="fa fa-comments"></i>{{ article.title }}</a></p>
+        {% endfor %}
         </div>
       </div>
     </aside>

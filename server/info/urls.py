@@ -5,6 +5,10 @@ from info import views
 
 
 URLS = [
+    ('^column/(?P<column_uid>.+)/article/(?P<article_uid>.+)/$',
+     views.ColumnArticleView),
+    ('^column/$', views.ColumnListView),
+    ('^column/(?P<uid>.+)/$', views.ColumnDetailView),
     ('^article/$', views.ArticleListView),
     ('^article/(?P<uid>.+)/$', views.ArticleDetailView),
 ]

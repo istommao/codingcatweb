@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
 
+    'simditor',
     'extensions',
     'info',
     'collector'
@@ -204,8 +205,26 @@ LOGGING = {
         'django.request': {
             'handlers': ['request_log_file'],
             'propagate': True,
-            'level': 'INFO',
+            'level': 'INFO'
         }
+    }
+}
+
+SIMDITOR_UPLOAD_PATH = 'simditor/'
+SIMDITOR_IMAGE_BACKEND = 'pillow'
+
+SIMDITOR_TOOLBAR = [
+    'title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale',
+    'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link',
+    'image', 'hr', '|', 'indent', 'outdent', 'alignment', 'markdown',
+    'fullscreen'
+]
+
+SIMDITOR_CONFIGS = {
+    'toolbar': SIMDITOR_TOOLBAR,
+    'upload': {
+        'url': '/simditor/upload/',
+        'fileKey': 'upload'
     }
 }
 
