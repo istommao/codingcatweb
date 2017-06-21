@@ -13,7 +13,7 @@ def get_column_object(uid):
 
 def get_articles_by_column(uid):
     """Get_articles_by_column."""
-    queryset = Article.objects.filter(column__uid=uid).order_by('-id')
+    queryset = Article.objects.filter(column__uid=uid).order_by('id')
 
     return queryset
 
