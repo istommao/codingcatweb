@@ -3,22 +3,19 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row post">
-    {% for column in columns %}
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{{ column.image.url }}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>{{ column.name|truncatechars:14 }}</h4>
-          <p>{{ column.intro|truncatechars:15 }}</p>
-          <p class="pull-right"><a href="{% url 'info:column_detail' column.uid %}" class="btn btn-primary" role="button">查看详情</a></p>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-
-  </div>
+<div class="fly-main" style="overflow: hidden;">
+    <ul class="fly-case-list">
+        {% for column in columns %}
+        <li data-id="361"> <a class="fly-case-img" href="{% url 'info:column_detail' column.uid %}" target="_blank" rel="nofollow"> <img src="{{ column.image.url }}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="{% url 'info:column_detail' column.uid %}" target="_blank" rel="nofollow">{{ column.name|truncatechars:14 }}</a></h2>
+            <p class="fly-case-desc">{{ column.intro|truncatechars:15 }}</p>
+            <!-- <div class="fly-case-info"> <a href="/u/8012256" class="fly-case-user" target="_blank"><img src="//q.qlogo.cn/qqapp/101235792/BB06AA364E51E3EE0855394B54893ED8/100"></a>
+                <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;">淡悠悠</span> 7小时前</p>
+                 <p>获得<a class="fly-case-nums fly-case-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">2</a>个赞</p>
+                <button class="layui-btn layui-btn-primary fly-case-active" data-type="praise">点赞</button>
+            </div> -->
+        </li>
+        {% endfor %}
+    </ul>
 </div>
-
 {% endblock content %}

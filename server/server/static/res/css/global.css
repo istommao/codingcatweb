@@ -124,7 +124,7 @@ body .iconfont{-webkit-text-stroke-width: 0;}
 /* 辅助 */
 // pre{padding: 10px 15px; margin: 10px 0; font-size: 12px; border-left: 6px solid #009688;  background-color: #F2F2F2; font-family: Courier New; overflow: auto;}
 
-.fly-main{position:relative; width:1000px; margin:0 auto;}
+.fly-main{position:relative; width: 1079px; margin:0 auto;}
 .fly-msg, .fly-error{padding:10px 15px; line-height:24px;}
 .fly-msg{background-color:#F8F8F8; color:#666;}
 .fly-msg a{color:#4F99CF}

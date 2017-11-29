@@ -1,31 +1,27 @@
-{% extends "base.html" %}
-{% load admin_static %}
-
-{% block content %}
-
-<div class="container">
-  <div class="row post">
-      {% for category in categories %}
-      <div class="col-xs-4 col-md-2 col-lg-1 col-sm-2">
-        <a href="{{ request.path }}?category={{ category.uid }}" class="btn btn-default">{{ category.name }}</a>
-      </div>
-      {% endfor %}
-  </div>
-
-  <div class="row post">
-    {% for item in resources %}
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{{ item.image.url }}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>{{ item.title }}</h4>
-          <p>{{ item.intro|truncatechars:16 }}</p>
-          <p class="pull-right"><a href="{{ item.link }}" class="btn btn-primary" target="_blank" role="button">查看详情</a></p>
-        </div>
-      </div>
+{% extends "base.html" %} {% load admin_static %} {% block content %}
+<div class="fly-main" style="overflow: hidden;">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+           {% for category in categories %}
+            <li class="layui-this-"><a href="{{ request.path }}?category={{ category.uid }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-    {% endfor %}
-  </div>
+    <ul class="fly-case-list">
+        {% for item in resources %}
+        <li data-id="361"> <a class="fly-case-img" href="{{ item.link }}" target="_blank" rel="nofollow"> <img src="{{ item.image.url }}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="{{ item.link }}" target="_blank" rel="nofollow">{{ item.title }}</a></h2>
+            <p class="fly-case-desc">{{ item.intro|truncatechars:16 }}</p>
+            <!-- <div class="fly-case-info"> <a href="/u/8012256" class="fly-case-user" target="_blank"><img src="//q.qlogo.cn/qqapp/101235792/BB06AA364E51E3EE0855394B54893ED8/100"></a>
+                <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;">淡悠悠</span> 7小时前</p>
+                 <p>获得<a class="fly-case-nums fly-case-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">2</a>个赞</p>
+                <button class="layui-btn layui-btn-primary fly-case-active" data-type="praise">点赞</button>
+            </div> -->
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- <div style="text-align: center;">
+        <div class="laypage-main"><span class="laypage-curr">1</span><a href="/case/2017/page/2/">2</a><a href="/case/2017/page/3/">3</a><a href="/case/2017/page/4/">4</a><a href="/case/2017/page/5/">5</a><span>…</span><a href="/case/2017/page/8/" class="laypage-last" title="尾页">尾页</a><a href="/case/2017/page/2/" class="laypage-next">下一页</a></div>
+    </div> -->
 </div>
-
 {% endblock content %}

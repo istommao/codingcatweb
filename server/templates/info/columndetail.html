@@ -7,33 +7,28 @@
     {% endblock extrastyle %}
 
 {% block content %}
-
-<div class="container">
-  <div class="row">
-
-    <main class="col-md-8 main-content">
-      <article class="post"><header class="post-head">
-        <h1 class="post-title">{{ column.name }}</h1>
-        <section class="post-meta"><span class="author">作者：<a href="#">codingcat</a></span> •
-        <time class="post-date" datetime="{{ column.creation_time }}" title="{{ column.name }}">{{ column.creation_time }}</time></section></header>
-        <div class="post-content"><p><img src="{{ column.image.url }}" data-holder-rendered="true" style="width:100%;"></p><p>{{ column.intro|safe }}</p>
-        </div></article>
-      </article>
-    </main>
-
-    <aside class="col-md-3 sidebar">
-      <div class="widget">
-        <h4 class="title"><a href="{% url 'info:column_detail' column.uid %}" title="">{{ column.name }}</a></h4>
-        {% for article in articles %}
-        <p><a href="{% url 'info:column_article' column.uid article.uid %}" title=""><i class="fa fa-comments"></i>{{ article.title }}</a></p>
-        {% endfor %}
+<div class="main layui-clear">
+    <div class="wrap">
+        <div class="content detail">
+            <div class="fly-panel detail-box">
+                <h1>{{ column.name }}</h1>
+                <div class="detail-body photos" style="margin-bottom: 20px;">
+                {{ column.intro|safe }}
+                </div>
+            </div>
         </div>
-      </div>
-    </aside>
-
-  </div>
+    </div>
+    <div class="edge">
+        <dl class="fly-panel fly-list-one">
+            <dt class="fly-panel-title"><a href="{% url 'info:column_detail' column.uid %}" title="">{{ column.name }}</a></dt>
+            {% for article in articles %}
+            <dd>
+                <a href="{% url 'info:column_article' column.uid article.uid %}">{{ article.title }}</a>
+            </dd>
+            {% endfor %}
+        </dl>
+    </div>
 </div>
-
 {% endblock content %}
 
 {% block extrascript %}

@@ -2,52 +2,24 @@
 {% load admin_static %}
 
 {% block content %}
-
-<div class="container">
-  <div class="row post">
-  
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{% static 'image/da.png' %}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>数据结构与算法学习笔记</h4>
-          <p>数据结构与算法学习笔记</p>
-          <p class="pull-right"><a href="https://da.silentnotes.top/" target="_blank" class="btn btn-primary" role="button">查看详情</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{% static 'image/crypto.png' %}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>密码学笔记</h4>
-          <p>密码学笔记</p>
-          <p class="pull-right"><a href="https://crypto.silentnotes.top/" target="_blank" class="btn btn-primary" role="button">查看详情</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{% static 'image/os.jpg' %}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>操作系统学习笔记</h4>
-          <p>操作系统学习笔记</p>
-          <p class="pull-right"><a href="https://os.silentnotes.top/" target="_blank" class="btn btn-primary" role="button">查看详情</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <img src="{% static 'image/python.png' %}" data-holder-rendered="true" style="height: 165px; width: 100%; display: block;">
-        <div class="caption">
-          <h4>Python笔记</h4>
-          <p>Python学习笔记</p>
-          <p class="pull-right"><a href="https://python.silentnotes.top/" target="_blank" class="btn btn-primary" role="button">查看详情</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="fly-main" style="overflow: hidden;">
+    <ul class="fly-case-list">
+        <li data-id="361"> <a class="fly-case-img" href="https://da.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/da.png' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="https://da.silentnotes.top/" target="_blank" rel="nofollow">数据结构与算法学习笔记</a></h2>
+            <p class="fly-case-desc">数据结构与算法学习笔记</p>
+        </li>
+        <li data-id="361"> <a class="fly-case-img" href="https://crypto.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/crypto.png' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="https://crypto.silentnotes.top/" target="_blank" rel="nofollow">密码学笔记</a></h2>
+            <p class="fly-case-desc">密码学笔记</p>
+        </li>
+        <li data-id="361"> <a class="fly-case-img" href="https://os.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/os.jpg' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="https://os.silentnotes.top/" target="_blank" rel="nofollow">操作系统学习笔记</a></h2>
+            <p class="fly-case-desc">操作系统学习笔记</p>
+        </li>
+        <li data-id="361"> <a class="fly-case-img" href="https://python.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/python.png' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
+            <h2><a href="https://python.silentnotes.top/" target="_blank" rel="nofollow">Python笔记</a></h2>
+            <p class="fly-case-desc">Python笔记</p>
+        </li>
+    </ul>
 </div>
 {% endblock content %}
