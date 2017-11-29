@@ -1,39 +1,44 @@
-{% extends "base.html" %}
-{% load admin_static %}
-
-  {% block extrastyle %}
-    {{ block.super }}
-    <link href="{% static 'highlight/styles/monokai_sublime.css' %}" rel="stylesheet">
-    {% endblock extrastyle %}
-
-{% block content %}
-
-<div class="container">
-  <div class="row">
-    <main class="col-md-8 main-content">
-      <article class="post"><header class="post-head">
-        <h1 class="post-title">{{ article.title }}</h1>
-        <section class="post-meta"><span class="author">作者：<a href="#">codingcat</a></span> • 
-        <time class="post-date" datetime="{{ article.creation_time }}" title="{{ article.title }}">{{ article.creation_time }}</time></section></header>
-        <div class="post-content"><p>{{ article.content|safe }}</p>
-        </div></article>
-      </article>
-    </main>
-
-    <aside class="col-md-4 sidebar">
-      <div class="widget">
-        <h4 class="title">分类</h4>
-        <p><a href="javascript:void(0);" title=""><i class="fa fa-comments"></i>技术资讯</a></p>
+{% extends "base.html" %} {% load admin_static %} {% block extrastyle %} {{ block.super }}
+<link href="{% static 'highlight/styles/monokai_sublime.css' %}" rel="stylesheet"> {% endblock extrastyle %} {% block content %}
+<div class="main layui-clear">
+    <div class="wrap">
+        <div class="content detail">
+            <div class="fly-panel detail-box">
+                <h1>{{ article.title }}</h1>
+                <div class="fly-tip fly-detail-hint" data-id="{{rows.id}}">
+                    <span class="fly-tip-stick">置顶帖</span>
+                    <span class="fly-tip-jing">精帖</span>
+                    <span>未结贴</span>
+                    <div class="fly-list-hint">
+                        <i class="iconfont" title="人气">&#xe60b;</i> 98032
+                    </div>
+                </div>
+                <div class="detail-body photos" style="margin-bottom: 20px;">
+                {{ article.content|safe }}
+                </div>
+            </div>
         </div>
-      </div>
-    </aside>
-
-  </div>
+    </div>
+    <div class="edge">
+        <dl class="fly-panel fly-list-one">
+            <dt class="fly-panel-title">最近热帖</dt>
+            <dd>
+                <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                <span><i class="iconfont">&#xe60b;</i> 6087</span>
+            </dd>
+        </dl>
+        <dl class="fly-panel fly-list-one">
+            <dt class="fly-panel-title">近期热议</dt>
+            <dd>
+                <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                <span><i class="iconfont">&#xe60c;</i> 96</span>
+            </dd>
+        </dl>
+    </div>
 </div>
-
-{% endblock content %}
-
-{% block extrascript %}
+{% endblock content %} {% block extrascript %}
 <script src="{% static 'highlight/highlight.pack.js' %}"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
 {% endblock extrascript %}
