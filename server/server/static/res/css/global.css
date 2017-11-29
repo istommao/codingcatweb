@@ -20,7 +20,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.detail-body ul {
+.detail-body ul, ol {
   margin-left: 20px;
 }
 .detail-body li {
