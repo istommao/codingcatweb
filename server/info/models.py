@@ -18,6 +18,7 @@ class Column(models.Model):
 
     name = models.CharField('名称', max_length=32)
     intro = models.CharField('简介', max_length=128, default='')
+    content = RichTextField(verbose_name='内容', default='')
 
     creation_time = models.DateTimeField('创建时间', auto_now_add=True)
 
