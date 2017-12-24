@@ -13,14 +13,16 @@ def get_column_object(uid):
 
 def get_articles_by_column(uid):
     """Get_articles_by_column."""
-    queryset = Article.objects.filter(column__uid=uid).order_by('id')
+    queryset = Article.objects.filter(
+        column__uid=uid
+    ).order_by('id')
 
     return queryset
 
 
 def get_columns_queryset():
     """Get_columns_queryset."""
-    queryset = Column.objects.all().order_by('-id')
+    queryset = Column.objects.all().only('uid', 'name').order_by('-id')
 
     return queryset
 
