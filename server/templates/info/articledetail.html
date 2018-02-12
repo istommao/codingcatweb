@@ -18,14 +18,6 @@
                 </div>
                 <div class="detail-body photos" style="margin-bottom: 20px;">
                 {{ article.content|safe }}
-
-<pre><code class="language-python">def get_article_detail(uid):
-    article = ORM.get_article(uid)
-
-    if article:
-        cache.incr('key')
-    return article
-</code></pre>
                 </div>
             </div>
         </div>
