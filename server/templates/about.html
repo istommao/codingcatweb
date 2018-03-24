@@ -1,15 +1,33 @@
-{% extends "base.html" %} {% block content %}
-<div class="main layui-clear">
-    <div class="wrap">
-        <div class="content detail">
-            <div class="fly-panel detail-box">
-                <h2>Codingcat 编程猫</h2>
-                <p>
-                    <h4>做互联网时代的终生学习者!</h4>
-                    <h4>Github: <a href="https://github.com/istommao" target="_blank">https://github.com/istommao</a></h4>
-                </p>
-            </div>
-        </div>
+{% extends 'base.html' %}{% load static %}
+ {% block extrastyle %} {{ block.super }}
+<link href="{% static 'css/prism.css' %}" rel="stylesheet" />
+{% endblock extrastyle %}
+
+{% block topPanel %}
+<div class="fly-panel fly-column">
+    <div class="layui-container">
+        <ul class="layui-clear">
+            <li class="layui-hide-xs layui-this"><a href="/">技术</a></li>
+            <li><a href="#">其他</a></li>
+        </ul>
+
     </div>
 </div>
-{% endblock content %}
+{% endblock topPanel %}
+
+{% block leftBlock %}
+<div class="layui-col-md8 content detail">
+    <div class="fly-panel detail-box">
+        <h1>Codingcat 编程猫</h1>
+        <div class="fly-detail-info">
+            <span class="layui-badge layui-bg-green fly-detail-column">cat</span>
+          </span>
+        </div>
+
+        <div class="detail-body photos">做互联网时代的终生学习者</div>
+    </div>
+</div>
+{% endblock leftBlock %}
+{% block extrascript %}
+<script src="{% static 'js/prism.js' %}"></script>
+{% endblock extrascript %}

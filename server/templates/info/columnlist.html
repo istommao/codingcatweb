@@ -1,11 +1,7 @@
-{% extends "base.html" %}
-{% load admin_static %}
+{% extends 'base.html' %}{% load static %}
 
-{% block content %}
-
-<div class="fly-main" style="overflow: hidden;">
+{% block mainer %}
     <div class="fly-case-list">
-
         {% for column in columns %}
         <div class="cardCover">
             <a href="{% url 'info:column_detail' column.uid %}" target="_blank" rel="nofollow">
@@ -29,5 +25,4 @@
         </div>
         {% endfor %}
     </div>
-</div>
-{% endblock content %}
+{% endblock mainer %}

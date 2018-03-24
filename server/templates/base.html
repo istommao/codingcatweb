@@ -1,62 +1,68 @@
-{% load admin_static extags %}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
+
 <head>
-    <meta charset="utf-8">
-    <title>CodingCat</title>
+    <meta charset="UTF-8">
+    <title>pyblog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="CodingCat">
-    <meta name="description" content="CodingCat">
-    {% block extrastyle %}
+    <meta name="keywords" content="pyton,blog">
+    <meta name="description" content="pyblog">
     <link rel="stylesheet" href="{% static 'res/layui/css/layui.css' %}">
     <link rel="stylesheet" href="{% static 'res/css/global.css' %}">
-    {% endblock extrastyle %}
+    {% block extrastyle %}{% endblock extrastyle %}
 </head>
 
 <body>
-{% block body %}
-    {% block navbar %}
-    <div class="header">
-        <div class="main">
-            <a class="nav-logo" href="/" title="CodingCat">CodingCat</a>
-            <div class="nav">
-                <a class="{% active_url request.path '/info/article/' %}" href="{% url 'info:article_list' %}">文章</a>
-                <a class="{% active_url request.path '/info/column/' %}" href="{% url 'info:column_list' %}">专栏</a>
-                <a class="{% active_url request.path '/collector' %}" href="{% url 'collector:collect_list' %}">收藏家</a>
-                <a class="{% active_url request.path '/note' %}" href="/note">无声笔记</a>
-                <a class="{% active_url request.path '/about' %}" href="/about">关于</a>
-            </div>
+    <div class="fly-header layui-bg-black">
+        <div class="layui-container">
+          <a class="fly-logo" href="/"> <img src="{% static 'res/images/logo2.png' %}" alt="layui"></a>
+            {% block topnav %}
+                {% include 'topnav.html' %}
+            {% endblock topnav %}
+            <ul class="layui-nav fly-nav-user">
+            </ul>
         </div>
     </div>
-    {% endblock navbar %}
 
-    <div class="main layui-clear">
-        {% block content %}{% endblock content %}
+    {% block topPanel %}{% endblock topPanel %}
+
+    <div class="layui-container">
+        <div class="layui-row layui-col-space15">
+            {% block mainer %}
+                {% block leftBlock %} {% endblock leftBlock %}
+
+                {% block rightBlock %}
+                {% include 'rightblock.html' %}
+                {% endblock rightBlock %}
+            {% endblock mainer %}
+        </div>
     </div>
 
     <div class="footer">
-        <p><a href="/">编程猫</a> 2017 &copy; <a href="https://codingcat.top/">codingcat.top</a></p>
+        <p><a href="/">编程猫</a> 2018 &copy; <a href="https://codingcat.top/">codingcat.top</a></p>
     </div>
 
-    {% block mainscript %}
     <script src="{% static 'res/layui/layui.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script>
-    function footerPosition(){
-        $(".footer").removeClass("fixed-bottom");
-        var contentHeight = document.body.scrollHeight,//网页正文全文高度
-            winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
-        if(!(contentHeight > winHeight)){
-            //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
-            $(".footer").addClass("fixed-bottom");
+    $(function(){
+        function footerPosition(){
+            $(".footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $(".footer").addClass("fixed-bottom");
+            }
+
         }
-    }
-    footerPosition();
-
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
     </script>
-    {% endblock mainscript %}
-
     {% block extrascript %}{% endblock extrascript %}
-{% endblock body %}
+    <!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));</script>-->
 </body>
+
 </html>

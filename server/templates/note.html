@@ -1,25 +1,90 @@
-{% extends "base.html" %}
-{% load admin_static %}
+{% extends 'base.html' %}{% load static %}
 
-{% block content %}
-<div class="fly-main" style="overflow: hidden;">
-    <ul class="fly-case-list">
-        <li data-id="361"> <a class="fly-case-img" href="https://da.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/da.png' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
-            <h2><a href="https://da.silentnotes.top/" target="_blank" rel="nofollow">数据结构与算法学习笔记</a></h2>
-            <p class="fly-case-desc">数据结构与算法学习笔记</p>
-        </li>
-        <li data-id="361"> <a class="fly-case-img" href="https://crypto.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/crypto.jpg' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
-            <h2><a href="https://crypto.silentnotes.top/" target="_blank" rel="nofollow">密码学笔记</a></h2>
-            <p class="fly-case-desc">密码学笔记</p>
-        </li>
-        <li data-id="361"> <a class="fly-case-img" href="https://os.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/os.jpg' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
-            <h2><a href="https://os.silentnotes.top/" target="_blank" rel="nofollow">操作系统学习笔记</a></h2>
-            <p class="fly-case-desc">操作系统学习笔记</p>
-        </li>
-        <li data-id="361"> <a class="fly-case-img" href="https://python.silentnotes.top/" target="_blank" rel="nofollow"> <img src="{% static 'image/python.png' %}" alt=""> <cite class="layui-btn layui-btn-primary layui-btn-small">去查看</cite> </a>
-            <h2><a href="https://python.silentnotes.top/" target="_blank" rel="nofollow">Python笔记</a></h2>
-            <p class="fly-case-desc">Python笔记</p>
-        </li>
-    </ul>
-</div>
-{% endblock content %}
+{% block mainer %}
+    <div class="fly-case-list">
+
+        <div class="cardCover">
+            <a href="https://da.silentnotes.top/" target="_blank" rel="nofollow">
+                <div class="cardBox">
+                    <div class="box">
+                        <div class="boxImg"><img src="{% static 'image/da.png' %}"></div>
+                        <div class="boxContent">
+                            <p class="boxTitle" title="">数据结构与算法学习笔记</p>
+                            <p class="boxDesc" title="">数据结构与算法学习笔记</p>
+                            <div class="boxBottom">
+                                <div class="bottom-box clearfix">
+                                    <div class="evaluation-box l">
+                                        <div class="author-info"><span>codingcat</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cardCover">
+            <a href="https://crypto.silentnotes.top/" target="_blank" rel="nofollow">
+                <div class="cardBox">
+                    <div class="box">
+                        <div class="boxImg"><img src="{% static 'image/crypto.jpg' %}"></div>
+                        <div class="boxContent">
+                            <p class="boxTitle" title="">密码学笔记</p>
+                            <p class="boxDesc" title="">密码学笔记</p>
+                            <div class="boxBottom">
+                                <div class="bottom-box clearfix">
+                                    <div class="evaluation-box l">
+                                        <div class="author-info"><span>codingcat</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cardCover">
+            <a href="https://os.silentnotes.top/" target="_blank" rel="nofollow">
+                <div class="cardBox">
+                    <div class="box">
+                        <div class="boxImg"><img src="{% static 'image/os.jpg' %}"></div>
+                        <div class="boxContent">
+                            <p class="boxTitle" title="">操作系统学习笔记</p>
+                            <p class="boxDesc" title="">操作系统学习笔记</p>
+                            <div class="boxBottom">
+                                <div class="bottom-box clearfix">
+                                    <div class="evaluation-box l">
+                                        <div class="author-info"><span>codingcat</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cardCover">
+            <a href="https://python.silentnotes.top/" target="_blank" rel="nofollow">
+                <div class="cardBox">
+                    <div class="box">
+                        <div class="boxImg"><img src="{% static 'image/python.png' %}"></div>
+                        <div class="boxContent">
+                            <p class="boxTitle" title="">Python笔记</p>
+                            <p class="boxDesc" title="">Python笔记</p>
+                            <div class="boxBottom">
+                                <div class="bottom-box clearfix">
+                                    <div class="evaluation-box l">
+                                        <div class="author-info"><span>codingcat</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+{% endblock mainer %}

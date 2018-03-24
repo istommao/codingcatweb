@@ -1,49 +1,37 @@
-{% extends "base.html" %} {% load admin_static %} {% block extrastyle %} {{ block.super }}
-<!-- <link href="{% static 'highlight/styles/monokai_sublime.css' %}" rel="stylesheet">-->
+{% extends 'base.html' %}{% load static %}
+ {% block extrastyle %} {{ block.super }}
 <link href="{% static 'css/prism.css' %}" rel="stylesheet" />
+{% endblock extrastyle %}
 
-{% endblock extrastyle %} {% block content %}
-<div class="main layui-clear">
-    <div class="wrap">
-        <div class="content detail">
-            <div class="fly-panel detail-box">
-                <h1>{{ article.title }}</h1>
-                <div class="fly-tip fly-detail-hint" data-id="{{rows.id}}">
-                    <span class="fly-tip-stick">置顶帖</span>
-                    <span class="fly-tip-jing">精帖</span>
-                    <span>未结贴</span>
-                    <div class="fly-list-hint">
-                        <i class="iconfont" title="人气">&#xe60b;</i> 98032
-                    </div>
-                </div>
-                <div class="detail-body photos" style="margin-bottom: 20px;">
-                {{ article.content|safe }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="edge">
-        <dl class="fly-panel fly-list-one">
-            <dt class="fly-panel-title">最近热帖</dt>
-            <dd>
-                <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                <span><i class="iconfont">&#xe60b;</i> 6087</span>
-            </dd>
-        </dl>
-        <dl class="fly-panel fly-list-one">
-            <dt class="fly-panel-title">近期热议</dt>
-            <dd>
-                <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                <span><i class="iconfont">&#xe60c;</i> 96</span>
-            </dd>
-        </dl>
+{% block topPanel %}
+<div class="fly-panel fly-column">
+    <div class="layui-container">
+        <ul class="layui-clear">
+            <li class="layui-hide-xs layui-this"><a href="/">首页</a></li>
+            <li><a href="#">其他</a></li>
+        </ul>
+
     </div>
 </div>
-{% endblock content %} {% block extrascript %}
-<script src="{% static 'js/prism.js' %}"></script>
+{% endblock topPanel %}
 
-<!--<script src="{% static 'highlight/highlight.pack.js' %}"></script>
-<script>
-hljs.initHighlightingOnLoad();
-</script>-->
+{% block leftBlock %}
+<div class="layui-col-md8 content detail">
+    <div class="fly-panel detail-box">
+        <h1>{{ article.title }}</h1>
+        <div class="fly-detail-info">
+            <span class="layui-badge layui-bg-green fly-detail-column">{{ article.column.name }}</span>
+
+            <span class="fly-list-nums">
+            <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> 66</a>
+            <i class="iconfont" title="人气">&#xe60b;</i> 55
+          </span>
+        </div>
+
+        <div class="detail-body photos">{{ article.content|safe }}</div>
+    </div>
+</div>
+{% endblock leftBlock %}
+{% block extrascript %}
+<script src="{% static 'js/prism.js' %}"></script>
 {% endblock extrascript %}

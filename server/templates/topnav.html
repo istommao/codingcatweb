@@ -1,0 +1,18 @@
+{% load extags %}
+<ul class="layui-nav fly-nav layui-hide-xs">
+    <li class="layui-nav-item {% active_url request.path '/info/article/' %}">
+        <a href="/info/article/"><i class="iconfont icon-fabu"></i>文章</a>
+    </li>
+    <li class="layui-nav-item {% active_url request.path '/info/column/' %}">
+        <a href="/info/column/"><i class="iconfont icon-daima"></i>专栏</a>
+    </li>
+    <li class="layui-nav-item {% active_url request.path '/collector' %}">
+        <a href="/collector/collector/"><i class="iconfont icon-lianjie"></i>收藏家</a>
+    </li>
+    <li class="layui-nav-item {% active_url request.path '/note' %}">
+        <a href="/note"><i class="iconfont icon-shichang"></i>无声笔记</a>
+    </li>
+    <li class="layui-nav-item {% active_url request.path '/about/' %}">
+        <a href="/about/"><i class="iconfont icon-touxiang"></i>关于</a>
+    </li>
+</ul>
