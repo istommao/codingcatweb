@@ -1,0 +1,44 @@
+{% extends 'base.html' %}{% load static %}
+ {% block extrastyle %} {{ block.super }}
+<link href="{% static 'css/prism.css' %}" rel="stylesheet" />
+{% endblock extrastyle %}
+
+{% block topPanel %}
+<div class="fly-panel fly-column">
+    <div class="layui-container">
+
+    </div>
+</div>
+{% endblock topPanel %}
+
+{% block leftBlock %}
+<div class="layui-col-md8 content detail">
+    <div class="fly-panel detail-box">
+        <h1>{{ article.name }}</h1>
+        <div class="fly-detail-info">
+            <span class="fly-list-nums">
+            <i class="iconfont" title="人气">&#xe60b;</i> 0
+          </span>
+        </div>
+
+        <div class="detail-body photos">{{ article.content|safe }}</div>
+    </div>
+</div>
+{% endblock leftBlock %}
+
+{% block rightBlock %}
+<div class="layui-col-md4">
+    <dl class="fly-panel fly-list-one">
+        <dt class="fly-panel-title"><a href="{% url 'info:column_detail' column.uid %}" title="">{{ column.name }}</a></dt>
+        {% for article in articles %}
+        <dd>
+            <a href="{% url 'info:column_article' column.uid article.uid %}">{{ article.title }}</a>
+        </dd>
+        {% endfor %}
+    </dl>
+</div>
+{% endblock rightBlock %}
+
+{% block extrascript %}
+<script src="{% static 'js/prism.js' %}"></script>
+{% endblock extrascript %}
