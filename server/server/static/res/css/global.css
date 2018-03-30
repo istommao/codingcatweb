@@ -762,8 +762,8 @@ body .fly-user-main{position: relative; min-height: 600px;}
 
 
 .detail-body code {
-    padding: 2px 4px;
-/*    font-size: 90%;*/
+/*    padding: 2px 4px;
+    font-size: 90%;*/
     color: #c7254e;
     background-color: #f9f2f4;
     border-radius: 4px;
