@@ -721,3 +721,12 @@ body .fly-user-main{position: relative; min-height: 600px;}
     bottom: 0;
     width:100%;
 }
+
+
+.detail-body code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
