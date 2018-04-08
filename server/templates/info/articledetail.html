@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% load static %}
  {% block extrastyle %} {{ block.super }}
+ <link href="{% static 'css/viewer.min.css' %}" rel="stylesheet" />
 <link href="{% static 'css/prism.css' %}" rel="stylesheet" />
 {% endblock extrastyle %}
 
@@ -16,6 +17,10 @@
 {% endblock topPanel %}
 
 {% block leftBlock %}
+<div style="display:none;">
+  <img id="image-viewer" src="" alt="Picture">
+</div>
+
 <div class="layui-col-md8 content detail">
     <div class="fly-panel detail-box">
         <h1>{{ article.title }}</h1>
@@ -28,10 +33,31 @@
           </span>
         </div>
 
-        <div class="detail-body photos">{{ article.content|safe }}</div>
+        <div class="detail-body photos" id="images-show">{{ article.content|safe }}</div>
     </div>
 </div>
 {% endblock leftBlock %}
 {% block extrascript %}
 <script src="{% static 'js/prism.js' %}"></script>
+<script src="{% static 'js/viewer.min.js' %}"></script>
+<script src="{% static 'js/jquery-viewer.min.js' %}"></script>
+<script>
+$(function() {
+    var image = $('#image-viewer');
+
+    image.viewer({
+      inline: true,
+      viewed: function() {
+        image.viewer('zoomTo', 1);
+      }
+    });
+
+    // Get the Viewer.js instance after initialized
+    var viewer = image.data('viewer');
+
+    // View a list of images
+    $('#images-show').viewer();
+})
+
+</script>
 {% endblock extrascript %}
