@@ -25,7 +25,7 @@
     <div class="fly-panel detail-box">
         <h1>{{ article.title }}</h1>
         <div class="fly-detail-info">
-            <span class="layui-badge layui-bg-green fly-detail-column">{{ article.column.name }}</span>
+            <span class="layui-badge layui-bg-green fly-detail-column">{{ article.column.name|default:'未分类' }}</span>
 
             <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> 66</a>
