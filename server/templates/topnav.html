@@ -1,18 +1,21 @@
 {% load extags %}
 <ul class="layui-nav fly-nav layui-hide-xs">
     <li class="layui-nav-item {% active_url request.path '/info/article/' %}">
-        <a href="/info/article/"><i class="iconfont icon-fabu"></i>文章</a>
+        <a href="/info/article/"><i class="layui-icon layui-icon-form"></i>文章</a>
     </li>
     <li class="layui-nav-item {% active_url request.path '/info/column/' %}">
-        <a href="/info/column/"><i class="iconfont icon-daima"></i>专栏</a>
+        <a href="/info/column/"><i class="layui-icon layui-icon-template-1"></i>专栏</a>
     </li>
     <li class="layui-nav-item {% active_url request.path '/collector' %}">
-        <a href="/collector/collector/"><i class="iconfont icon-lianjie"></i>收藏家</a>
+        <a href="/collector/collector/"><i class="layui-icon layui-icon-rate"></i>收藏家</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="https://codesnippet.top/" target="_blank"><i class="layui-icon layui-icon-fonts-code"></i>Snippet</a>
     </li>
     <li class="layui-nav-item {% active_url request.path '/note' %}">
-        <a href="/note"><i class="iconfont icon-shichang"></i>无声笔记</a>
+        <a href="/note"><i class="layui-icon layui-icon-read"></i>无声笔记</a>
     </li>
     <li class="layui-nav-item {% active_url request.path '/about/' %}">
-        <a href="/about/"><i class="iconfont icon-touxiang"></i>关于</a>
+        <a href="/about/"><i class="layui-icon layui-icon-username"></i>关于</a>
     </li>
 </ul>
