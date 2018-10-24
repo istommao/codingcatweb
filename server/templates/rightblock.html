@@ -1,10 +1,8 @@
+{% load extags %}
 <div class="layui-col-md3">
     <dl class="fly-panel fly-list-one">
         <dt class="fly-panel-title">最近更新</dt>
-        <dd>
-            <a href="https://codingcat.top/info/article/FJa6MMs5mqrBWyDH/">cryptokit更轻松的在python中实现加密解密</a>
-            <!-- <span><i class="iconfont icon-pinglun1"></i> </span> -->
-        </dd>
+        {% render_lately_articles %}
     </dl>
     <div class="fly-panel fly-link">
         <h3 class="fly-panel-title">友情链接</h3>

@@ -20,6 +20,12 @@ def get_articles_by_column(uid):
     return queryset
 
 
+def get_lately_articles():
+    queryset = Article.objects.order_by('-id')[:5]
+
+    return queryset
+
+
 def get_columns_queryset():
     """Get_columns_queryset."""
     queryset = Column.objects.all().only('uid', 'name').order_by('-id')

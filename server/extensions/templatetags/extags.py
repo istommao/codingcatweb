@@ -14,3 +14,12 @@ def activelink(reqpath, url):
 def active_url(reqpath, url):
     """activelink."""
     return 'nav-this' if reqpath.startswith(url) else ''
+
+
+@register.inclusion_tag('component/lately_articles.html', takes_context=True)
+def render_lately_articles(context):
+    request = context['request']
+    from info.services import get_lately_articles
+    articles = get_lately_articles()
+
+    return {'request': request, 'articles': articles}
