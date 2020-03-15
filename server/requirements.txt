@@ -1,4 +1,4 @@
-Django==1.11.1
+Django==1.11.28
 mysqlclient==1.4.6
 Pillow==7.0.0
 django-simditor
